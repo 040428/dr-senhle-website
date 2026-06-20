@@ -1,60 +1,10 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import {
-  HiArrowRight,
-  HiOutlineAcademicCap,
-  HiOutlineBookOpen,
-  HiOutlineBriefcase,
-  HiOutlineDesktopComputer,
-  HiOutlineUserGroup,
-} from "react-icons/hi";
 import "./ProgramsSection.css";
-
-const trainingFeatures = [
-  {
-    title: "Diploma in Bible and Theology",
-    icon: HiOutlineAcademicCap,
-  },
-  {
-    title: "Leadership development workshops",
-    icon: HiOutlineUserGroup,
-  },
-  {
-    title: "Flexible physical and online learning",
-    icon: HiOutlineDesktopComputer,
-  },
-  {
-    title: "Mentorship for ministry and community impact",
-    icon: HiOutlineBriefcase,
-  },
-];
-
-const trainingSupport = [
-  {
-    title: "Academic Foundation",
-    icon: HiOutlineBookOpen,
-    items: [
-      "Doctor of Ministry Degree",
-      "PhD in Practical Theology",
-      "PhD in Theological Studies",
-      "Master of Arts in Intercultural Studies",
-    ],
-  },
-  {
-    title: "Ministry Experience",
-    icon: HiOutlineBriefcase,
-    items: [
-      "Preaching and teaching",
-      "Pastoral care and counseling",
-      "Curriculum development",
-      "Faith-based leadership programs",
-    ],
-  },
-];
 
 function ProgramsSection() {
   return (
-    <Box component="section" className="programs-section" id="training">
+    <Box component="section" className="programs-section">
       <Container maxWidth={false} className="programs-container">
         <div className="programs-grid">
 
@@ -65,43 +15,24 @@ function ProgramsSection() {
             viewport={{ once: true }}
           >
             <span className="programs-label">
-              TRAINING
+              THEOLOGY & TRAINING
             </span>
 
             <h2 className="programs-heading">
-              Training For
+              Diploma in
               <br />
-              Ministry,
+              Bible &
               <br />
-              Leadership & Service
+              Theology
             </h2>
 
             <p className="programs-text">
-              Practical and theological training designed to
-              equip pastors, leaders, students and Christian
-              workers with biblical knowledge, leadership
-              skills and ministry confidence.
+              A comprehensive theological training program
+              designed to equip future pastors, ministry
+              leaders and Christian workers with biblical
+              knowledge, leadership skills and practical
+              ministry experience.
             </p>
-
-            <a className="programs-secondary-link" href="#contact">
-              Read More About Training
-            </a>
-
-            <div className="training-support-grid">
-              {trainingSupport.map((group) => (
-                <div key={group.title} className="training-support-card">
-                  <div className="training-support-icon">
-                    <group.icon />
-                  </div>
-                  <h3>{group.title}</h3>
-                  <ul>
-                    {group.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           <motion.div
@@ -111,20 +42,29 @@ function ProgramsSection() {
             transition={{ duration: 0.9 }}
             viewport={{ once: true }}
           >
-            {trainingFeatures.map((feature, index) => (
-              <div key={feature.title} className="program-feature">
-                <div className="program-feature-icon">
-                  <feature.icon />
-                </div>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{feature.title}</h3>
-              </div>
-            ))}
+            <div className="program-feature">
+              <span>01</span>
+              <h3>Accredited Program</h3>
+            </div>
 
-            <a className="programs-btn" href="#contact">
-              Enquire About Training
-              <HiArrowRight />
-            </a>
+            <div className="program-feature">
+              <span>02</span>
+              <h3>Physical Classes</h3>
+            </div>
+
+            <div className="program-feature">
+              <span>03</span>
+              <h3>Online Learning</h3>
+            </div>
+
+            <div className="program-feature">
+              <span>04</span>
+              <h3>Flexible Study Options</h3>
+            </div>
+
+            <button className="programs-btn">
+              Register Today
+            </button>
           </motion.div>
 
         </div>

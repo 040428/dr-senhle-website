@@ -208,7 +208,7 @@ function Hero() {
                     variant="outlined"
                     color="primary"
                     size="large"
-                    href="#training"
+                    href="#programs"
                     sx={{
                       px: 4,
                       py: 1.5,
@@ -221,7 +221,7 @@ function Hero() {
                       },
                     }}
                   >
-                    View Training
+                    Explore Programs
                   </Button>
                 </MotionBox>
               </Stack>

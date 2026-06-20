@@ -1,56 +1,35 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import {
-  HiArrowRight,
-  HiOutlineBookOpen,
-  HiOutlineHeart,
-  HiOutlineHome,
-  HiOutlineSparkles,
-  HiOutlineUserGroup,
-  HiOutlineUsers,
-} from "react-icons/hi";
 import "./ServicesSection.css";
 
 const services = [
   {
     title: "Premarital Counseling",
-    icon: HiOutlineHeart,
-    tag: "Relationships",
     description:
       "Preparing couples for a strong and lasting marriage through biblical principles, communication skills and spiritual growth.",
   },
   {
     title: "Marriage Counseling",
-    icon: HiOutlineUsers,
-    tag: "Support",
     description:
       "Helping couples strengthen relationships, resolve conflict and build healthy foundations rooted in faith and mutual understanding.",
   },
   {
     title: "Family Counseling",
-    icon: HiOutlineHome,
-    tag: "Family Care",
     description:
       "Supporting families in restoring harmony, strengthening relationships and navigating life’s challenges together.",
   },
   {
     title: "Leadership Training",
-    icon: HiOutlineUserGroup,
-    tag: "Leadership",
     description:
       "Equipping leaders with practical leadership principles, servant leadership values and organizational excellence.",
   },
   {
     title: "Theology Training",
-    icon: HiOutlineBookOpen,
-    tag: "Biblical Study",
     description:
       "Providing theological education and biblical training for pastors, ministry leaders and believers seeking deeper understanding.",
   },
   {
     title: "Christian Mentorship",
-    icon: HiOutlineSparkles,
-    tag: "Growth",
     description:
       "Guiding individuals toward spiritual maturity, personal growth and purposeful living through mentorship and discipleship.",
   },
@@ -71,22 +50,21 @@ function ServicesSection() {
           </span>
 
           <h2 className="services-heading">
-            Practical Christian
+            Empowering People
             <br />
-            Support For Life
+            Through Practical
+            <br />
+            Christian Guidance.
           </h2>
-
-          <p className="services-intro">
-            Each service is presented as a focused offering so visitors can
-            quickly understand how they can get help and take the next step.
-          </p>
         </motion.div>
 
         <div className="services-list">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="service-card"
+              className={`service-row ${
+                index % 2 === 1 ? "reverse" : ""
+              }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -97,16 +75,8 @@ function ServicesSection() {
               </div>
 
               <div className="service-content">
-                <div className="service-icon">
-                  <service.icon />
-                </div>
-                <span className="service-tag">{service.tag}</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <a href="#contact" className="service-link">
-                  Read More
-                  <HiArrowRight />
-                </a>
               </div>
             </motion.div>
           ))}

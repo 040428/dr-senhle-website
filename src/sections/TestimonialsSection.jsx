@@ -1,10 +1,9 @@
 import { Box, Container } from "@mui/material";
-import { HiOutlineChatAlt2 } from "react-icons/hi";
 import "./TestimonialsSection.css";
 
 function TestimonialsSection() {
   return (
-    <Box component="section" className="testimonials-section" id="testimonials">
+    <Box className="testimonials-section">
       <Container maxWidth={false} className="testimonials-container">
 
         <span className="section-label">
@@ -12,23 +11,13 @@ function TestimonialsSection() {
         </span>
 
         <h2>
-          Stories Of Growth
-          <br />
-          And Transformation
+          Lives Transformed Through
+          Faith & Mentorship
         </h2>
-
-        <p className="testimonials-intro">
-          Testimonials are now presented as clean cards to break up the page and
-          make each story easier to notice.
-        </p>
 
         <div className="testimonial-grid">
 
           <div className="testimonial">
-            <div className="testimonial-icon">
-              <HiOutlineChatAlt2 />
-            </div>
-            <div className="testimonial-rating">★★★★★</div>
             <p>
               "Dr. Senhle's guidance strengthened our
               marriage and helped us rediscover purpose."
@@ -38,10 +27,6 @@ function TestimonialsSection() {
           </div>
 
           <div className="testimonial">
-            <div className="testimonial-icon">
-              <HiOutlineChatAlt2 />
-            </div>
-            <div className="testimonial-rating">★★★★★</div>
             <p>
               "His leadership training transformed the
               way I serve in ministry."
@@ -51,10 +36,6 @@ function TestimonialsSection() {
           </div>
 
           <div className="testimonial">
-            <div className="testimonial-icon">
-              <HiOutlineChatAlt2 />
-            </div>
-            <div className="testimonial-rating">★★★★★</div>
             <p>
               "One of the most impactful theological
               educators I have ever encountered."
