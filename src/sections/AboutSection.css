@@ -9,10 +9,16 @@
 }
 
 .about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-top-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 48px;
-  align-items: start;
+  align-items: center;
 }
 
 .about-label {
@@ -34,7 +40,7 @@
 
 .about-intro {
   margin: 24px 0 32px;
-  max-width: 480px;
+  max-width: 520px;
   color: #4b5563;
   font-size: 1rem;
   line-height: 1.8;
@@ -47,6 +53,7 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
 }
 
 .about-story-card:hover {
@@ -81,17 +88,10 @@
   margin-bottom: 18px !important;
 }
 
-.about-divider {
-  height: 1px;
-  background: rgba(0, 0, 0, 0.08);
-  margin: 36px 0;
-}
-
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
-  margin-bottom: 28px;
 }
 
 .about-stat-card {
@@ -121,10 +121,16 @@
 }
 
 .about-quote-card {
-  margin-bottom: 24px;
   padding: 24px;
   border-radius: 22px;
   background: linear-gradient(135deg, rgba(46, 49, 146, 0.06), rgba(0, 174, 239, 0.08));
+}
+
+.about-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: start;
 }
 
 .about-quote {
@@ -183,8 +189,13 @@
 }
 
 @media (max-width: 992px) {
-  .about-grid {
+  .about-top-grid,
+  .about-bottom-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .about-purpose-grid {
