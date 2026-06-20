@@ -1,7 +1,6 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import {
-  HiArrowRight,
   HiOutlineBookOpen,
   HiOutlineHeart,
   HiOutlineMicrophone,
@@ -103,11 +102,6 @@ function TeachingsSection() {
               <div className="teaching-description">
                 {item.description}
               </div>
-
-              <a className="teaching-link" href="#contact">
-                Read More
-                <HiArrowRight />
-              </a>
             </motion.div>
           ))}
         </div>

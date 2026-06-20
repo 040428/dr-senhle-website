@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import {
@@ -35,8 +34,6 @@ const purposeItems = [
 ];
 
 function AboutSection() {
-  const [isExpanded, setIsExpanded] = useState(false);
-
   return (
     <Box component="section" className="about-section" id="about">
       <Container maxWidth={false} className="about-container">
@@ -91,23 +88,13 @@ function AboutSection() {
               biblical principles and practical guidance.
             </Typography>
 
-            {isExpanded && (
-              <Typography className="about-description">
-                With over 28 years of experience in ministry,
-                mentorship and leadership development, he has
-                impacted countless lives through counseling,
-                training programs, radio ministry and community
-                empowerment initiatives.
-              </Typography>
-            )}
-
-            <button
-              type="button"
-              className="about-read-more"
-              onClick={() => setIsExpanded((current) => !current)}
-            >
-              {isExpanded ? "Read Less" : "Read More"}
-            </button>
+            <Typography className="about-description">
+              With over 28 years of experience in ministry,
+              mentorship and leadership development, he has
+              impacted countless lives through counseling,
+              training programs, radio ministry and community
+              empowerment initiatives.
+            </Typography>
 
             <div className="about-divider" />
 

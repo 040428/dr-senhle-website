@@ -83,15 +83,6 @@
   line-height: 1.85;
 }
 
-.teaching-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #2e3192;
-  text-decoration: none;
-  font-weight: 700;
-}
-
 .radio-highlight {
   margin-top: 40px;
   padding: 28px;

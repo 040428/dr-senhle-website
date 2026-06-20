@@ -1,7 +1,6 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import {
-  HiArrowRight,
   HiOutlineBookOpen,
   HiOutlineHeart,
   HiOutlineHome,
@@ -103,10 +102,6 @@ function ServicesSection() {
                 <span className="service-tag">{service.tag}</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <a href="#contact" className="service-link">
-                  Read More
-                  <HiArrowRight />
-                </a>
               </div>
             </motion.div>
           ))}

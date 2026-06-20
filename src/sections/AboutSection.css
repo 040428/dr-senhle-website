@@ -81,18 +81,6 @@
   margin-bottom: 18px !important;
 }
 
-.about-read-more {
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-  border: none;
-  background: transparent;
-  color: #2e3192;
-  font-size: 0.96rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
 .about-divider {
   height: 1px;
   background: rgba(0, 0, 0, 0.08);
