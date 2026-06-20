@@ -10,23 +10,29 @@ function ContactSection() {
           <span>CONTACT</span>
 
           <h2>
-            Let's Connect
+            Let&apos;s Connect
           </h2>
 
-          <p>
+          <p className="contact-intro">
             Reach out for counselling, mentorship,
             theology training or speaking engagements.
           </p>
 
           <div className="contact-details">
-            <h4>Phone</h4>
-            <p>76022924</p>
+            <div className="contact-detail-card">
+              <h4>Phone</h4>
+              <p>76022924</p>
+            </div>
 
-            <h4>WhatsApp</h4>
-            <p>76022924</p>
+            <div className="contact-detail-card">
+              <h4>WhatsApp</h4>
+              <p>76022924</p>
+            </div>
 
-            <h4>Email</h4>
-            <p>info@drsenhle.com</p>
+            <div className="contact-detail-card">
+              <h4>Email</h4>
+              <p>info@drsenhle.com</p>
+            </div>
           </div>
         </div>
 

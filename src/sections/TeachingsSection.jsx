@@ -51,10 +51,15 @@ function TeachingsSection() {
           </span>
 
           <h2 className="teachings-heading">
-            Sharing Biblical Wisdom
+            Biblical Teaching
             <br />
-            For Everyday Life.
+            For Everyday Life
           </h2>
+
+          <p className="teachings-intro">
+            Organized into simple cards so visitors can quickly scan topics and
+            find the area most relevant to them.
+          </p>
         </motion.div>
 
         <div className="teachings-list">
@@ -81,6 +86,10 @@ function TeachingsSection() {
               <div className="teaching-description">
                 {item.description}
               </div>
+
+              <a className="teaching-link" href="#contact">
+                Read More
+              </a>
             </motion.div>
           ))}
         </div>

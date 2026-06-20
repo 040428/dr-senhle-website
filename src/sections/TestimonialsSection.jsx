@@ -11,13 +11,20 @@ function TestimonialsSection() {
         </span>
 
         <h2>
-          Lives Transformed Through
-          Faith & Mentorship
+          Stories Of Growth
+          <br />
+          And Transformation
         </h2>
+
+        <p className="testimonials-intro">
+          Testimonials are now presented as clean cards to break up the page and
+          make each story easier to notice.
+        </p>
 
         <div className="testimonial-grid">
 
           <div className="testimonial">
+            <div className="testimonial-rating">★★★★★</div>
             <p>
               "Dr. Senhle's guidance strengthened our
               marriage and helped us rediscover purpose."
@@ -27,6 +34,7 @@ function TestimonialsSection() {
           </div>
 
           <div className="testimonial">
+            <div className="testimonial-rating">★★★★★</div>
             <p>
               "His leadership training transformed the
               way I serve in ministry."
@@ -36,6 +44,7 @@ function TestimonialsSection() {
           </div>
 
           <div className="testimonial">
+            <div className="testimonial-rating">★★★★★</div>
             <p>
               "One of the most impactful theological
               educators I have ever encountered."

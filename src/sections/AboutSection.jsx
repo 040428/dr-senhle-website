@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import "./AboutSection.css";
@@ -25,6 +26,8 @@ const purposeItems = [
 ];
 
 function AboutSection() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <Box component="section" className="about-section" id="about">
       <Container maxWidth={false} className="about-container">
@@ -50,10 +53,21 @@ function AboutSection() {
               <br />
               Mentorship.
             </h2>
+
+            <p className="about-intro">
+              A trusted voice in Christian mentorship, counseling and leadership
+              formation with a mission to help people live with clarity,
+              purpose and conviction.
+            </p>
+
+            <a className="about-primary-btn" href="#contact">
+              Start a Conversation
+            </a>
           </motion.div>
 
           {/* RIGHT SIDE */}
           <motion.div
+            className="about-story-card"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -67,30 +81,42 @@ function AboutSection() {
               biblical principles and practical guidance.
             </Typography>
 
-            <Typography className="about-description">
-              With over 28 years of experience in ministry,
-              mentorship and leadership development, he has
-              impacted countless lives through counseling,
-              training programs, radio ministry and community
-              empowerment initiatives.
-            </Typography>
+            {isExpanded && (
+              <Typography className="about-description">
+                With over 28 years of experience in ministry,
+                mentorship and leadership development, he has
+                impacted countless lives through counseling,
+                training programs, radio ministry and community
+                empowerment initiatives.
+              </Typography>
+            )}
+
+            <button
+              type="button"
+              className="about-read-more"
+              onClick={() => setIsExpanded((current) => !current)}
+            >
+              {isExpanded ? "Read Less" : "Read More"}
+            </button>
 
             <div className="about-divider" />
 
             <div className="about-stats">
               {stats.map((stat) => (
-                <div key={stat.label}>
+                <div key={stat.label} className="about-stat-card">
                   <h3>{stat.value}</h3>
                   <p>{stat.label}</p>
                 </div>
               ))}
             </div>
 
-            <blockquote className="about-quote">
-              "Our mission is to equip people with biblical wisdom,
-              practical leadership skills and the confidence to live
-              purposeful lives."
-            </blockquote>
+            <div className="about-quote-card">
+              <blockquote className="about-quote">
+                "Our mission is to equip people with biblical wisdom,
+                practical leadership skills and the confidence to live
+                purposeful lives."
+              </blockquote>
+            </div>
 
             <div className="about-purpose-grid">
               {purposeItems.map((item) => (

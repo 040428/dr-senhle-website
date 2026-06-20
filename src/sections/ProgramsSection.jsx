@@ -61,6 +61,10 @@ function ProgramsSection() {
               skills and ministry confidence.
             </p>
 
+            <a className="programs-secondary-link" href="#contact">
+              Read More About Training
+            </a>
+
             <div className="training-support-grid">
               {trainingSupport.map((group) => (
                 <div key={group.title} className="training-support-card">
