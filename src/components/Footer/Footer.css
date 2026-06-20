@@ -1,0 +1,35 @@
+.footer {
+    background: #111827;
+    color: white;
+    padding-top: 80px;
+  }
+  
+  .footer-inner {
+    max-width: 1200px;
+    margin: auto;
+  
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  
+    gap: 60px;
+    padding: 0 40px 60px;
+  }
+  
+  .footer a {
+    display: block;
+    color: #d1d5db;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    text-align: center;
+    padding: 25px;
+  }
+  
+  @media(max-width:900px){
+    .footer-inner{
+      grid-template-columns:1fr;
+    }
+  }

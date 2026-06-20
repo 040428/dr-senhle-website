@@ -1,0 +1,34 @@
+.quote-section {
+    position: relative;
+    min-height: 70vh;
+  
+    background:
+      linear-gradient(
+        rgba(46,49,146,.75),
+        rgba(0,174,239,.65)
+      ),
+      url("/quote-bg.jpg");
+  
+    background-size: cover;
+    background-position: center;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  .quote-container {
+    max-width: 1200px !important;
+    margin: auto;
+    color: white;
+  }
+  
+  .quote-container h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
+    font-weight: 800;
+  }
+  
+  .quote-container p {
+    margin-top: 30px;
+    font-size: 1.2rem;
+  }

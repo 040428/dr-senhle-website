@@ -1,0 +1,105 @@
+.teachings-section {
+    background: #ffffff;
+    padding: 160px 40px;
+  }
+  
+  .teachings-container {
+    max-width: 1200px !important;
+    margin: 0 auto;
+  }
+  
+  .teachings-label {
+    color: #00aeef;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .teachings-heading {
+    margin-top: 20px;
+    margin-bottom: 100px;
+  
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+  
+    color: #111827;
+  }
+  
+  .teachings-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .teaching-row {
+    display: grid;
+    grid-template-columns: 100px 280px 1fr;
+  
+    gap: 40px;
+    padding: 45px 0;
+  
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  
+  .teaching-row:last-child {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  
+  .teaching-number {
+    color: #00aeef;
+    font-weight: 700;
+  }
+  
+  .teaching-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  .teaching-description {
+    color: #6b7280;
+    line-height: 1.9;
+  }
+  
+  .radio-highlight {
+    margin-top: 120px;
+  
+    padding-left: 30px;
+    border-left: 4px solid #00aeef;
+  
+    max-width: 800px;
+  }
+  
+  .radio-highlight span {
+    color: #00aeef;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .radio-highlight h3 {
+    margin: 15px 0;
+  
+    font-size: 2.2rem;
+    font-weight: 800;
+  
+    color: #111827;
+  }
+  
+  .radio-highlight p {
+    color: #6b7280;
+    line-height: 1.9;
+  }
+  
+  @media (max-width: 992px) {
+    .teaching-row {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .teachings-section {
+      padding: 100px 24px;
+    }
+  }
