@@ -1,4 +1,9 @@
 import { Box, Container } from "@mui/material";
+import {
+  HiOutlineChatAlt2,
+  HiOutlineMail,
+  HiOutlinePhone,
+} from "react-icons/hi";
 import "./ContactSection.css";
 
 function ContactSection() {
@@ -20,16 +25,25 @@ function ContactSection() {
 
           <div className="contact-details">
             <div className="contact-detail-card">
+              <div className="contact-detail-icon">
+                <HiOutlinePhone />
+              </div>
               <h4>Phone</h4>
               <p>76022924</p>
             </div>
 
             <div className="contact-detail-card">
+              <div className="contact-detail-icon">
+                <HiOutlineChatAlt2 />
+              </div>
               <h4>WhatsApp</h4>
               <p>76022924</p>
             </div>
 
             <div className="contact-detail-card">
+              <div className="contact-detail-icon">
+                <HiOutlineMail />
+              </div>
               <h4>Email</h4>
               <p>info@drsenhle.com</p>
             </div>

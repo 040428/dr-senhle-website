@@ -1,17 +1,38 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import {
+  HiArrowRight,
+  HiOutlineAcademicCap,
+  HiOutlineBookOpen,
+  HiOutlineBriefcase,
+  HiOutlineDesktopComputer,
+  HiOutlineUserGroup,
+} from "react-icons/hi";
 import "./ProgramsSection.css";
 
 const trainingFeatures = [
-  "Diploma in Bible and Theology",
-  "Leadership development workshops",
-  "Flexible physical and online learning",
-  "Mentorship for ministry and community impact",
+  {
+    title: "Diploma in Bible and Theology",
+    icon: HiOutlineAcademicCap,
+  },
+  {
+    title: "Leadership development workshops",
+    icon: HiOutlineUserGroup,
+  },
+  {
+    title: "Flexible physical and online learning",
+    icon: HiOutlineDesktopComputer,
+  },
+  {
+    title: "Mentorship for ministry and community impact",
+    icon: HiOutlineBriefcase,
+  },
 ];
 
 const trainingSupport = [
   {
     title: "Academic Foundation",
+    icon: HiOutlineBookOpen,
     items: [
       "Doctor of Ministry Degree",
       "PhD in Practical Theology",
@@ -21,6 +42,7 @@ const trainingSupport = [
   },
   {
     title: "Ministry Experience",
+    icon: HiOutlineBriefcase,
     items: [
       "Preaching and teaching",
       "Pastoral care and counseling",
@@ -68,6 +90,9 @@ function ProgramsSection() {
             <div className="training-support-grid">
               {trainingSupport.map((group) => (
                 <div key={group.title} className="training-support-card">
+                  <div className="training-support-icon">
+                    <group.icon />
+                  </div>
                   <h3>{group.title}</h3>
                   <ul>
                     {group.items.map((item) => (
@@ -87,14 +112,18 @@ function ProgramsSection() {
             viewport={{ once: true }}
           >
             {trainingFeatures.map((feature, index) => (
-              <div key={feature} className="program-feature">
+              <div key={feature.title} className="program-feature">
+                <div className="program-feature-icon">
+                  <feature.icon />
+                </div>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{feature}</h3>
+                <h3>{feature.title}</h3>
               </div>
             ))}
 
             <a className="programs-btn" href="#contact">
               Enquire About Training
+              <HiArrowRight />
             </a>
           </motion.div>
 

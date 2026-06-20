@@ -1,35 +1,48 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import {
+  HiArrowRight,
+  HiOutlineBookOpen,
+  HiOutlineHeart,
+  HiOutlineMicrophone,
+  HiOutlineSparkles,
+  HiOutlineUserGroup,
+} from "react-icons/hi";
 import "./TeachingsSection.css";
 
 const teachings = [
   {
     number: "01",
     title: "Marriage & Family",
+    icon: HiOutlineHeart,
     description:
       "Biblical guidance for healthy relationships, marriage enrichment, family development and conflict resolution.",
   },
   {
     number: "02",
     title: "Christian Leadership",
+    icon: HiOutlineUserGroup,
     description:
       "Developing servant leaders equipped to influence churches, communities and organizations with integrity.",
   },
   {
     number: "03",
     title: "Biblical Studies",
+    icon: HiOutlineBookOpen,
     description:
       "Deep theological teaching designed to strengthen faith, understanding and ministry effectiveness.",
   },
   {
     number: "04",
     title: "Personal Growth",
+    icon: HiOutlineSparkles,
     description:
       "Practical Christian principles that help individuals discover purpose, resilience and spiritual maturity.",
   },
   {
     number: "05",
     title: "Radio Ministry",
+    icon: HiOutlineMicrophone,
     description:
       "There Is None Like Him — a teaching ministry broadcast for over 15 years on Voice of the Church Radio.",
   },
@@ -79,6 +92,10 @@ function TeachingsSection() {
                 {item.number}
               </div>
 
+              <div className="teaching-icon">
+                <item.icon />
+              </div>
+
               <div className="teaching-title">
                 {item.title}
               </div>
@@ -89,6 +106,7 @@ function TeachingsSection() {
 
               <a className="teaching-link" href="#contact">
                 Read More
+                <HiArrowRight />
               </a>
             </motion.div>
           ))}

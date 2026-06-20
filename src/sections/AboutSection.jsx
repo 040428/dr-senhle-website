@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import {
+  HiArrowRight,
+  HiOutlineBookOpen,
+  HiOutlineLightBulb,
+  HiOutlineUserGroup,
+} from "react-icons/hi";
 import "./AboutSection.css";
 
 const stats = [
@@ -13,14 +19,17 @@ const stats = [
 const purposeItems = [
   {
     title: "Vision",
+    icon: HiOutlineLightBulb,
     text: "To nurture holistic growth through theology, mentorship and Christian education that shapes lives, families and communities.",
   },
   {
     title: "Mission",
+    icon: HiOutlineBookOpen,
     text: "To equip people with biblical wisdom, practical leadership skills and faith-rooted guidance for everyday life and ministry.",
   },
   {
     title: "Calling",
+    icon: HiOutlineUserGroup,
     text: "To serve faithfully as a mentor, teacher, counselor and spiritual leader who helps others grow with purpose and conviction.",
   },
 ];
@@ -62,6 +71,7 @@ function AboutSection() {
 
             <a className="about-primary-btn" href="#contact">
               Start a Conversation
+              <HiArrowRight />
             </a>
           </motion.div>
 
@@ -121,6 +131,9 @@ function AboutSection() {
             <div className="about-purpose-grid">
               {purposeItems.map((item) => (
                 <div key={item.title} className="about-purpose-card">
+                  <div className="about-purpose-icon">
+                    <item.icon />
+                  </div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </div>

@@ -1,4 +1,5 @@
 import { Box, Container } from "@mui/material";
+import { HiOutlineChatAlt2 } from "react-icons/hi";
 import "./TestimonialsSection.css";
 
 function TestimonialsSection() {
@@ -24,6 +25,9 @@ function TestimonialsSection() {
         <div className="testimonial-grid">
 
           <div className="testimonial">
+            <div className="testimonial-icon">
+              <HiOutlineChatAlt2 />
+            </div>
             <div className="testimonial-rating">★★★★★</div>
             <p>
               "Dr. Senhle's guidance strengthened our
@@ -34,6 +38,9 @@ function TestimonialsSection() {
           </div>
 
           <div className="testimonial">
+            <div className="testimonial-icon">
+              <HiOutlineChatAlt2 />
+            </div>
             <div className="testimonial-rating">★★★★★</div>
             <p>
               "His leadership training transformed the
@@ -44,6 +51,9 @@ function TestimonialsSection() {
           </div>
 
           <div className="testimonial">
+            <div className="testimonial-icon">
+              <HiOutlineChatAlt2 />
+            </div>
             <div className="testimonial-rating">★★★★★</div>
             <p>
               "One of the most impactful theological
