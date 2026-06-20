@@ -9,6 +9,21 @@ const stats = [
   { value: "1000+", label: "Lives Impacted" },
 ];
 
+const purposeItems = [
+  {
+    title: "Vision",
+    text: "To nurture holistic growth through theology, mentorship and Christian education that shapes lives, families and communities.",
+  },
+  {
+    title: "Mission",
+    text: "To equip people with biblical wisdom, practical leadership skills and faith-rooted guidance for everyday life and ministry.",
+  },
+  {
+    title: "Calling",
+    text: "To serve faithfully as a mentor, teacher, counselor and spiritual leader who helps others grow with purpose and conviction.",
+  },
+];
+
 function AboutSection() {
   return (
     <Box component="section" className="about-section" id="about">
@@ -76,6 +91,15 @@ function AboutSection() {
               practical leadership skills and the confidence to live
               purposeful lives."
             </blockquote>
+
+            <div className="about-purpose-grid">
+              {purposeItems.map((item) => (
+                <div key={item.title} className="about-purpose-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
         </div>

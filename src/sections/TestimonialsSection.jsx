@@ -3,7 +3,7 @@ import "./TestimonialsSection.css";
 
 function TestimonialsSection() {
   return (
-    <Box className="testimonials-section">
+    <Box component="section" className="testimonials-section" id="testimonials">
       <Container maxWidth={false} className="testimonials-container">
 
         <span className="section-label">

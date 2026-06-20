@@ -37,7 +37,7 @@ const teachings = [
 
 function TeachingsSection() {
   return (
-    <Box component="section" className="teachings-section">
+    <Box component="section" className="teachings-section" id="teachings">
       <Container maxWidth={false} className="teachings-container">
 
         <motion.div

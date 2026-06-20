@@ -21,8 +21,9 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Programs', href: '#programs' },
+  { label: 'Training', href: '#training' },
   { label: 'Teachings', href: '#teachings' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ];
 
