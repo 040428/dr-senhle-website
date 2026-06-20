@@ -45,64 +45,6 @@ const buttonVariants = {
   }),
 };
 
-function ScrollIndicator() {
-  return (
-    <MotionBox
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.8, duration: 0.6 }}
-      sx={{
-        position: 'absolute',
-        bottom: { xs: 24, md: 32 },
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: 0.5,
-        zIndex: 2,
-      }}
-    >
-      <Typography
-        variant="caption"
-        sx={{
-          color: 'rgba(31, 41, 55, 0.45)',
-          fontWeight: 500,
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
-          fontSize: '0.65rem',
-        }}
-      >
-        Scroll
-      </Typography>
-      <MotionBox
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-        sx={{
-          width: 24,
-          height: 38,
-          borderRadius: 12,
-          border: '2px solid rgba(46, 49, 146, 0.25)',
-          display: 'flex',
-          justifyContent: 'center',
-          pt: 1,
-        }}
-      >
-        <MotionBox
-          animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-          sx={{
-            width: 4,
-            height: 8,
-            borderRadius: 2,
-            background: 'linear-gradient(180deg, #2E3192, #00AEEF)',
-          }}
-        />
-      </MotionBox>
-    </MotionBox>
-  );
-}
-
 function Hero() {
   return (
     <Box
@@ -305,7 +247,6 @@ function Hero() {
         </Grid>
       </Container>
 
-      <ScrollIndicator />
     </Box>
   );
 }
