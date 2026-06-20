@@ -6,6 +6,27 @@ import {
 } from "react-icons/hi";
 import "./ContactSection.css";
 
+const contactDetails = [
+  {
+    title: "Phone",
+    value: "76022924",
+    href: "tel:76022924",
+    icon: HiOutlinePhone,
+  },
+  {
+    title: "WhatsApp",
+    value: "76022924",
+    href: "https://wa.me/26776022924",
+    icon: HiOutlineChatAlt2,
+  },
+  {
+    title: "Email",
+    value: "info@drsenhle.com",
+    href: "mailto:info@drsenhle.com",
+    icon: HiOutlineMail,
+  },
+];
+
 function ContactSection() {
   return (
     <Box className="contact-section" id="contact">
@@ -24,29 +45,22 @@ function ContactSection() {
           </p>
 
           <div className="contact-details">
-            <div className="contact-detail-card">
-              <div className="contact-detail-icon">
-                <HiOutlinePhone />
-              </div>
-              <h4>Phone</h4>
-              <p>76022924</p>
-            </div>
-
-            <div className="contact-detail-card">
-              <div className="contact-detail-icon">
-                <HiOutlineChatAlt2 />
-              </div>
-              <h4>WhatsApp</h4>
-              <p>76022924</p>
-            </div>
-
-            <div className="contact-detail-card">
-              <div className="contact-detail-icon">
-                <HiOutlineMail />
-              </div>
-              <h4>Email</h4>
-              <p>info@drsenhle.com</p>
-            </div>
+            {contactDetails.map((detail) => (
+              <a
+                key={detail.title}
+                className="contact-detail-card"
+                href={detail.href}
+                target={detail.title === "WhatsApp" ? "_blank" : undefined}
+                rel={detail.title === "WhatsApp" ? "noreferrer" : undefined}
+                aria-label={`Contact via ${detail.title}`}
+              >
+                <div className="contact-detail-icon">
+                  <detail.icon />
+                </div>
+                <h4>{detail.title}</h4>
+                <p>{detail.value}</p>
+              </a>
+            ))}
           </div>
         </div>
 
