@@ -203,7 +203,7 @@ function Hero() {
                   mb: { xs: 2, md: 3 },
                 }}
               >
-                Empowering
+                Transforming Lives Through
                 <br />
                 <Box
                   component="span"
@@ -214,12 +214,10 @@ function Hero() {
                     backgroundClip: 'text',
                   }}
                 >
-                  Families,
+                  Faith, Leadership
                 </Box>
                 <br />
-                Leaders &amp;
-                <br />
-                Communities
+                &amp; Mentorship
               </MotionTypography>
 
               <MotionTypography
