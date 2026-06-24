@@ -49,7 +49,7 @@ function Navbar() {
     transition: 'background-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease',
   };
 
-  const linkColor = scrolled ? '#1F2937' : '#1F2937';
+  const linkColor = scrolled ? '#1F2937' : 'rgba(255, 255, 255, 0.88)';
 
   const navLinks = (
     <Stack
@@ -149,7 +149,7 @@ function Navbar() {
             <IconButton
               edge="end"
               onClick={() => setDrawerOpen(true)}
-              sx={{ display: { xs: 'flex', md: 'none' }, color: '#1F2937' }}
+              sx={{ display: { xs: 'flex', md: 'none' }, color: scrolled ? '#1F2937' : '#FFFFFF' }}
               aria-label="Open menu"
             >
               <HiMenuAlt3 size={26} />

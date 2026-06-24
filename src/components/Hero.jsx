@@ -45,7 +45,7 @@ const buttonVariants = {
   }),
 };
 
-function TrustBadges({ sx }) {
+function TrustBadges({ sx, textColor = 'text.secondary', iconBackground, iconColor = '#2E3192' }) {
   return (
     <Stack
       direction="row"
@@ -65,18 +65,18 @@ function TrustBadges({ sx }) {
               width: 22,
               height: 22,
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(46, 49, 146, 0.1), rgba(0, 174, 239, 0.15))',
+              background: iconBackground || 'linear-gradient(135deg, rgba(46, 49, 146, 0.1), rgba(0, 174, 239, 0.15))',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
             }}
           >
-            <HiCheck size={14} color="#2E3192" />
+            <HiCheck size={14} color={iconColor} />
           </Box>
           <Typography
             variant="body2"
-            sx={{ fontWeight: 500, color: 'text.secondary', fontSize: '0.875rem' }}
+            sx={{ fontWeight: 500, color: textColor, fontSize: '0.875rem' }}
           >
             {badge}
           </Typography>
@@ -169,6 +169,14 @@ function Hero() {
         alignItems: 'center',
         pt: { xs: 11, sm: 12, md: 14 },
         pb: { xs: 7, sm: 8, md: 8 },
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          background:
+            'radial-gradient(circle at 18% 22%, rgba(0, 174, 239, 0.16), transparent 36%), radial-gradient(circle at 78% 18%, rgba(46, 49, 146, 0.28), transparent 30%)',
+          pointerEvents: 'none',
+        },
       }}
     >
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
@@ -199,7 +207,7 @@ function Hero() {
                 sx={{
                   fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.25rem', lg: '3.75rem' },
                   lineHeight: { xs: 1.08, md: 1.1 },
-                  color: '#1F2937',
+                  color: '#FFFFFF',
                   mb: { xs: 2, md: 3 },
                 }}
               >
@@ -226,7 +234,7 @@ function Hero() {
                 sx={{
                   fontSize: { xs: '1rem', md: '1.125rem' },
                   lineHeight: { xs: 1.65, md: 1.75 },
-                  color: 'text.secondary',
+                  color: 'rgba(255, 255, 255, 0.74)',
                   maxWidth: 520,
                   mb: { xs: 3, md: 4 },
                 }}
@@ -267,11 +275,11 @@ function Hero() {
                       px: 4,
                       py: 1.5,
                       width: { xs: '100%', sm: 'auto' },
-                      borderColor: 'rgba(46, 49, 146, 0.3)',
-                      color: '#2E3192',
+                      borderColor: 'rgba(255, 255, 255, 0.45)',
+                      color: '#FFFFFF',
                       '&:hover': {
-                        borderColor: '#2E3192',
-                        background: 'rgba(46, 49, 146, 0.04)',
+                        borderColor: '#FFFFFF',
+                        background: 'rgba(255, 255, 255, 0.08)',
                       },
                     }}
                   >
@@ -281,7 +289,12 @@ function Hero() {
               </Stack>
 
               <MotionBox variants={itemVariants} sx={{ display: { xs: 'none', md: 'block' } }}>
-                <TrustBadges sx={{ mt: 1 }} />
+                <TrustBadges
+                  sx={{ mt: 1 }}
+                  textColor="rgba(255, 255, 255, 0.78)"
+                  iconBackground="linear-gradient(135deg, rgba(0, 174, 239, 0.18), rgba(255, 255, 255, 0.12))"
+                  iconColor="#A5F3FC"
+                />
               </MotionBox>
             </MotionBox>
           </Grid>
@@ -314,6 +327,15 @@ function Hero() {
                   position: 'relative',
                   width: '100%',
                   minHeight: { xs: 240, sm: 340, md: 560 },
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    inset: { xs: '12% 8%', md: '10% 2%' },
+                    borderRadius: '50%',
+                    background:
+                      'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(0, 174, 239, 0.12) 38%, rgba(15, 23, 42, 0) 72%)',
+                    filter: 'blur(18px)',
+                  },
                 }}
               >
                 {heroImages.map((imageSrc, index) => (
@@ -346,7 +368,11 @@ function Hero() {
           </Grid>
         </Grid>
         <Box sx={{ display: { xs: 'block', md: 'none' }, mt: 1 }}>
-          <TrustBadges />
+          <TrustBadges
+            textColor="rgba(255, 255, 255, 0.78)"
+            iconBackground="linear-gradient(135deg, rgba(0, 174, 239, 0.18), rgba(255, 255, 255, 0.12))"
+            iconColor="#A5F3FC"
+          />
         </Box>
       </Container>
 
