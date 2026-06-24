@@ -8,9 +8,9 @@ function HeroSection() {
       component="section"
       sx={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: { xs: 'auto', md: '100svh' },
         backgroundColor: '#FFFFFF',
-        overflow: 'hidden',
+        overflow: { xs: 'visible', md: 'hidden' },
       }}
     >
       <Hero />

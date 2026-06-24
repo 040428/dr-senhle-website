@@ -56,7 +56,7 @@ function ScrollIndicator() {
         bottom: { xs: 24, md: 32 },
         left: '50%',
         transform: 'translateX(-50%)',
-        display: 'flex',
+        display: { xs: 'none', md: 'flex' },
         flexDirection: 'column',
         alignItems: 'center',
         gap: 0.5,
@@ -108,17 +108,17 @@ function Hero() {
     <Box
       sx={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: { xs: 'auto', md: '100svh' },
         display: 'flex',
         alignItems: 'center',
-        pt: { xs: 12, md: 14 },
-        pb: { xs: 10, md: 8 },
+        pt: { xs: 11, sm: 12, md: 14 },
+        pb: { xs: 6, sm: 7, md: 8 },
       }}
     >
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
         <Grid
           container
-          spacing={{ xs: 4, md: 1, lg: 2 }}
+          spacing={{ xs: 5, md: 1, lg: 2 }}
           alignItems="center"
           justifyContent="center"
         >
@@ -127,6 +127,7 @@ function Hero() {
             size={{ xs: 12, md: 7, lg: 6 }}
             sx={{
               display: 'flex',
+              order: { xs: 1, md: 0 },
               justifyContent: { md: 'flex-end' },
               pr: { md: 1, lg: 2 },
             }}
@@ -141,10 +142,10 @@ function Hero() {
                 variant="h1"
                 variants={itemVariants}
                 sx={{
-                  fontSize: { xs: '2.5rem', sm: '3rem', md: '3.25rem', lg: '3.75rem' },
-                  lineHeight: { xs: 1.15, md: 1.1 },
+                  fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.25rem', lg: '3.75rem' },
+                  lineHeight: { xs: 1.12, md: 1.1 },
                   color: '#1F2937',
-                  mb: 3,
+                  mb: { xs: 2.5, md: 3 },
                 }}
               >
                 Empowering
@@ -174,7 +175,7 @@ function Hero() {
                   lineHeight: 1.75,
                   color: 'text.secondary',
                   maxWidth: 520,
-                  mb: 4,
+                  mb: { xs: 3, md: 4 },
                 }}
               >
                 Christian Mentorship, Counseling and Leadership Development designed
@@ -185,7 +186,7 @@ function Hero() {
               <Stack
                 direction={{ xs: 'column', sm: 'row' }}
                 spacing={2}
-                sx={{ mb: 4 }}
+                sx={{ mb: { xs: 3, md: 4 } }}
               >
                 <MotionBox custom={0} variants={buttonVariants} initial="hidden" animate="visible">
                   <Button
@@ -231,7 +232,7 @@ function Hero() {
                   direction="row"
                   flexWrap="wrap"
                   gap={{ xs: 1.5, md: 2.5 }}
-                  sx={{ mt: 1 }}
+                  sx={{ mt: 1, maxWidth: 520 }}
                 >
                   {trustBadges.map((badge) => (
                     <Stack
@@ -270,7 +271,7 @@ function Hero() {
           <Grid
             size={{ xs: 12, md: 5, lg: 6 }}
             sx={{
-              order: { xs: 2, md: 0 },
+              order: { xs: 0, md: 0 },
               display: 'flex',
               justifyContent: { xs: 'center', md: 'flex-start' },
               pl: { md: 1, lg: 2 },
@@ -285,7 +286,7 @@ function Hero() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '100%',
-                minHeight: { xs: 380, sm: 460, md: 560 },
+                minHeight: { xs: 260, sm: 360, md: 560 },
               }}
             >
               <Box
@@ -293,8 +294,8 @@ function Hero() {
                 src="/images/dr-senhle.png"
                 alt="Dr Senhle — Christian Mentor and Counselor"
                 sx={{
-                  width: { xs: '92%', sm: '90%', md: '100%' },
-                  maxWidth: { xs: 440, sm: 520, md: 600, lg: 660 },
+                  width: { xs: '78%', sm: '82%', md: '100%' },
+                  maxWidth: { xs: 280, sm: 380, md: 600, lg: 660 },
                   height: 'auto',
                   objectFit: 'cover',
                   objectPosition: 'top center',
