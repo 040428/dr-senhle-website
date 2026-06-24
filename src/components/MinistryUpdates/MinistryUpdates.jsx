@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   HiArrowLeft,
   HiArrowRight,
-  HiOutlineBell,
   HiOutlineClock,
+  HiOutlineSparkles,
   HiX,
 } from "react-icons/hi";
 import "./MinistryUpdates.css";
@@ -69,7 +69,7 @@ const slideVariants = {
   }),
 };
 
-function MinistryUpdates() {
+function MinistryUpdates({ variant = "navbar", onOpen }) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -96,6 +96,10 @@ function MinistryUpdates() {
   }, [updatesCount]);
 
   const openViewer = () => {
+    if (onOpen) {
+      onOpen();
+    }
+
     setCurrentIndex(0);
     setDirection(1);
     setProgress(0);
@@ -169,16 +173,16 @@ function MinistryUpdates() {
     <>
       <button
         type="button"
-        className="ministry-updates-fab"
+        className={`ministry-updates-trigger ministry-updates-trigger--${variant}`}
         aria-label="Open ministry updates"
         onClick={openViewer}
       >
-        <span className="ministry-updates-fab__icon">
-          <HiOutlineBell aria-hidden="true" />
+        <span className="ministry-updates-trigger__icon">
+          <HiOutlineSparkles aria-hidden="true" />
         </span>
-        <span className="ministry-updates-fab__text">Ministry Updates</span>
+        <span className="ministry-updates-trigger__text">Ministry Updates</span>
         {newUpdatesCount > 0 && (
-          <span className="ministry-updates-fab__badge" aria-label={`${newUpdatesCount} new updates`}>
+          <span className="ministry-updates-trigger__badge" aria-label={`${newUpdatesCount} new updates`}>
             {newUpdatesCount}
           </span>
         )}

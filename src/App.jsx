@@ -9,7 +9,6 @@ import TeachingsSection from "./sections/TeachingsSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
 import ContactSection from "./sections/ContactSection";
 import Footer from "./components/Footer/Footer";
-import MinistryUpdates from "./components/MinistryUpdates/MinistryUpdates";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
       <TestimonialsSection />
       <ContactSection />
       <Footer />
-      <MinistryUpdates />
       <WhatsappButton />
     </Box>
   );
