@@ -16,7 +16,6 @@ import {
 } from '@mui/material';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
-import MinistryUpdates from '../MinistryUpdates/MinistryUpdates';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -124,15 +123,13 @@ function Navbar() {
 
             {navLinks}
 
-            <MinistryUpdates variant="navbar" />
-
             <Button
               variant="contained"
               color="primary"
               href="#contact"
               sx={{
                 display: 'inline-flex',
-                ml: { md: 1.5 },
+                ml: { md: 3 },
                 mr: { xs: 1, md: 0 },
                 px: { xs: 2, sm: 2.5, md: 3 },
                 py: { xs: 1, md: 1.25 },
@@ -194,12 +191,6 @@ function Navbar() {
             </ListItem>
           ))}
           <ListItem sx={{ px: 2, pt: 2 }}>
-            <MinistryUpdates
-              variant="drawer"
-              onOpen={() => setDrawerOpen(false)}
-            />
-          </ListItem>
-          <ListItem sx={{ px: 2, pt: 1.5 }}>
             <Button
               variant="contained"
               color="primary"
