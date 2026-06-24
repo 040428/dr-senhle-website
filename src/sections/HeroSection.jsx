@@ -10,7 +10,7 @@ function HeroSection() {
         position: 'relative',
         minHeight: '100vh',
         backgroundColor: '#FFFFFF',
-        overflow: 'hidden',
+        overflowX: 'clip',
       }}
     >
       <Hero />

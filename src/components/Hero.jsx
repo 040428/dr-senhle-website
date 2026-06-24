@@ -45,6 +45,47 @@ const buttonVariants = {
   }),
 };
 
+function TrustBadges({ sx }) {
+  return (
+    <Stack
+      direction="row"
+      flexWrap="wrap"
+      gap={{ xs: 1.25, md: 2.5 }}
+      sx={sx}
+    >
+      {trustBadges.map((badge) => (
+        <Stack
+          key={badge}
+          direction="row"
+          alignItems="center"
+          spacing={0.75}
+        >
+          <Box
+            sx={{
+              width: 22,
+              height: 22,
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(46, 49, 146, 0.1), rgba(0, 174, 239, 0.15))',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
+          >
+            <HiCheck size={14} color="#2E3192" />
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{ fontWeight: 500, color: 'text.secondary', fontSize: '0.875rem' }}
+          >
+            {badge}
+          </Typography>
+        </Stack>
+      ))}
+    </Stack>
+  );
+}
+
 function ScrollIndicator() {
   return (
     <MotionBox
@@ -61,6 +102,7 @@ function ScrollIndicator() {
         alignItems: 'center',
         gap: 0.5,
         zIndex: 2,
+        display: { xs: 'none', md: 'flex' },
       }}
     >
       <Typography
@@ -108,11 +150,11 @@ function Hero() {
     <Box
       sx={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: { xs: 'auto', md: '100vh' },
         display: 'flex',
         alignItems: 'center',
-        pt: { xs: 12, md: 14 },
-        pb: { xs: 10, md: 8 },
+        pt: { xs: 11, sm: 12, md: 14 },
+        pb: { xs: 7, sm: 8, md: 8 },
       }}
     >
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
@@ -141,10 +183,10 @@ function Hero() {
                 variant="h1"
                 variants={itemVariants}
                 sx={{
-                  fontSize: { xs: '2.5rem', sm: '3rem', md: '3.25rem', lg: '3.75rem' },
-                  lineHeight: { xs: 1.15, md: 1.1 },
+                  fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.25rem', lg: '3.75rem' },
+                  lineHeight: { xs: 1.08, md: 1.1 },
                   color: '#1F2937',
-                  mb: 3,
+                  mb: { xs: 2, md: 3 },
                 }}
               >
                 Empowering
@@ -171,10 +213,10 @@ function Hero() {
                 variants={itemVariants}
                 sx={{
                   fontSize: { xs: '1rem', md: '1.125rem' },
-                  lineHeight: 1.75,
+                  lineHeight: { xs: 1.65, md: 1.75 },
                   color: 'text.secondary',
                   maxWidth: 520,
-                  mb: 4,
+                  mb: { xs: 3, md: 4 },
                 }}
               >
                 Christian Mentorship, Counseling and Leadership Development designed
@@ -185,7 +227,7 @@ function Hero() {
               <Stack
                 direction={{ xs: 'column', sm: 'row' }}
                 spacing={2}
-                sx={{ mb: 4 }}
+                sx={{ mb: { xs: 3, md: 4 } }}
               >
                 <MotionBox custom={0} variants={buttonVariants} initial="hidden" animate="visible">
                   <Button
@@ -226,42 +268,8 @@ function Hero() {
                 </MotionBox>
               </Stack>
 
-              <MotionBox variants={itemVariants}>
-                <Stack
-                  direction="row"
-                  flexWrap="wrap"
-                  gap={{ xs: 1.5, md: 2.5 }}
-                  sx={{ mt: 1 }}
-                >
-                  {trustBadges.map((badge) => (
-                    <Stack
-                      key={badge}
-                      direction="row"
-                      alignItems="center"
-                      spacing={0.75}
-                    >
-                      <Box
-                        sx={{
-                          width: 22,
-                          height: 22,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(135deg, rgba(46, 49, 146, 0.1), rgba(0, 174, 239, 0.15))',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <HiCheck size={14} color="#2E3192" />
-                      </Box>
-                      <Typography
-                        variant="body2"
-                        sx={{ fontWeight: 500, color: 'text.secondary', fontSize: '0.875rem' }}
-                      >
-                        {badge}
-                      </Typography>
-                    </Stack>
-                  ))}
-                </Stack>
+              <MotionBox variants={itemVariants} sx={{ display: { xs: 'none', md: 'block' } }}>
+                <TrustBadges sx={{ mt: 1 }} />
               </MotionBox>
             </MotionBox>
           </Grid>
@@ -285,7 +293,7 @@ function Hero() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '100%',
-                minHeight: { xs: 380, sm: 460, md: 560 },
+                minHeight: { xs: 240, sm: 340, md: 560 },
               }}
             >
               <Box
@@ -293,7 +301,7 @@ function Hero() {
                 src="/images/dr-senhle.png"
                 alt="Dr Senhle — Christian Mentor and Counselor"
                 sx={{
-                  width: { xs: '92%', sm: '90%', md: '100%' },
+                  width: { xs: '72%', sm: '78%', md: '100%' },
                   maxWidth: { xs: 440, sm: 520, md: 600, lg: 660 },
                   height: 'auto',
                   objectFit: 'cover',
@@ -303,6 +311,9 @@ function Hero() {
             </MotionBox>
           </Grid>
         </Grid>
+        <Box sx={{ display: { xs: 'block', md: 'none' }, mt: 1 }}>
+          <TrustBadges />
+        </Box>
       </Container>
 
       <ScrollIndicator />

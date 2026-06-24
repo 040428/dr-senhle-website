@@ -128,14 +128,22 @@ function Navbar() {
               color="primary"
               href="#contact"
               sx={{
-                display: { xs: 'none', md: 'inline-flex' },
-                ml: 3,
-                px: 3,
-                py: 1.25,
+                display: 'inline-flex',
+                ml: { md: 3 },
+                mr: { xs: 1, md: 0 },
+                px: { xs: 2, sm: 2.5, md: 3 },
+                py: { xs: 1, md: 1.25 },
+                fontSize: { xs: '0.78rem', sm: '0.84rem', md: '0.9rem' },
+                minWidth: { xs: 0, sm: 'auto' },
                 boxShadow: '0 8px 24px rgba(46, 49, 146, 0.25)',
               }}
             >
-              Book Consultation
+              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                Book Consultation
+              </Box>
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
+                Contact
+              </Box>
             </Button>
 
             <IconButton
