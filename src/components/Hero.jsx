@@ -1,11 +1,5 @@
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { HiCheck } from 'react-icons/hi';
 
@@ -17,6 +11,12 @@ const trustBadges = [
   'Leadership Development',
   'Family Counseling',
   'Theology Training',
+];
+
+const heroImages = [
+  '/images/dr-senhle.png',
+  '/images/dr-senhle1.png',
+  '/images/dr-senhle2.png',
 ];
 
 const containerVariants = {
@@ -146,6 +146,20 @@ function ScrollIndicator() {
 }
 
 function Hero() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (heroImages.length <= 1) {
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveImageIndex((currentIndex) => (currentIndex + 1) % heroImages.length);
+    }, 5500);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -294,20 +308,42 @@ function Hero() {
                 alignItems: 'center',
                 width: '100%',
                 minHeight: { xs: 240, sm: 340, md: 560 },
+                position: 'relative',
               }}
             >
               <Box
-                component="img"
-                src="/images/dr-senhle.png"
-                alt="Dr Senhle — Christian Mentor and Counselor"
                 sx={{
-                  width: { xs: '72%', sm: '78%', md: '100%' },
-                  maxWidth: { xs: 440, sm: 520, md: 600, lg: 660 },
-                  height: 'auto',
-                  objectFit: 'cover',
-                  objectPosition: 'top center',
+                  position: 'relative',
+                  width: '100%',
+                  minHeight: { xs: 240, sm: 340, md: 560 },
                 }}
-              />
+              >
+                {heroImages.map((imageSrc, index) => (
+                  <MotionBox
+                    key={imageSrc}
+                    component="img"
+                    src={imageSrc}
+                    alt={index === activeImageIndex ? 'Dr Senhle — Christian Mentor and Counselor' : ''}
+                    aria-hidden={index !== activeImageIndex}
+                    initial={false}
+                    animate={{
+                      opacity: index === activeImageIndex ? 1 : 0,
+                      scale: index === activeImageIndex ? 1 : 0.985,
+                    }}
+                    transition={{ duration: 1.8, ease: 'easeInOut' }}
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      margin: '0 auto',
+                      width: { xs: '72%', sm: '78%', md: '100%' },
+                      maxWidth: { xs: 440, sm: 520, md: 600, lg: 660 },
+                      height: '100%',
+                      objectFit: 'contain',
+                      objectPosition: 'top center',
+                    }}
+                  />
+                ))}
+              </Box>
             </MotionBox>
           </Grid>
         </Grid>
