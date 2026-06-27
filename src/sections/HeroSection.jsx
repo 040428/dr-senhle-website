@@ -292,6 +292,7 @@ function Hero() {
       sx={{
         position: 'relative',
         minHeight: { xs: 'auto', md: '100vh' },
+        background: 'linear-gradient(180deg, #0F172A 0%, #111827 100%)',
         display: 'flex',
         alignItems: 'center',
         pt: { xs: 11, sm: 12, md: 14 },
