@@ -227,22 +227,24 @@ function HeroVisual({ activeImageIndex, mobile = false }) {
             left: { xs: 16, sm: 24 },
             right: { xs: 16, sm: 'auto' },
             bottom: { xs: 16, sm: 24 },
-            maxWidth: 290,
-            px: 2,
-            py: 1.4,
+            maxWidth: { xs: 'calc(100% - 32px)', sm: 290 },
+            px: { xs: 2.25, sm: 2 },
+            py: { xs: 1.6, sm: 1.4 },
             borderRadius: '18px',
             background: 'rgba(15, 23, 42, 0.72)',
             border: '1px solid rgba(255, 255, 255, 0.12)',
             backdropFilter: 'blur(12px)',
+            textAlign: { xs: 'center', sm: 'left' },
           }}
         >
           <Typography
             sx={{
               color: '#FFFFFF',
               fontWeight: 700,
-              fontSize: { xs: '1rem', sm: '1.08rem' },
-              lineHeight: 1.3,
-              mb: 0.4,
+              fontSize: { xs: '1.18rem', sm: '1.08rem' },
+              lineHeight: { xs: 1.35, sm: 1.3 },
+              letterSpacing: { xs: '-0.02em', sm: 'normal' },
+              mb: 0,
             }}
           >
             Transforming Lives Through
