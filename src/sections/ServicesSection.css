@@ -95,11 +95,21 @@
   margin-bottom: 16px;
 }
 
+.service-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .service-content p {
   color: #6b7280;
   line-height: 1.8;
   font-size: 0.98rem;
   margin-bottom: 22px;
+}
+
+.service-card-action {
+  margin-top: auto;
 }
 
 @media (max-width: 992px) {

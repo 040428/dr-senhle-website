@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import {
   HiOutlineBookOpen,
@@ -17,6 +17,7 @@ const services = [
     tag: "Relationships",
     description:
       "Preparing couples for a strong and lasting marriage through biblical principles, communication skills and spiritual growth.",
+    consultationCta: true,
   },
   {
     title: "Marriage Counseling",
@@ -24,6 +25,7 @@ const services = [
     tag: "Support",
     description:
       "Helping couples strengthen relationships, resolve conflict and build healthy foundations rooted in faith and mutual understanding.",
+    consultationCta: true,
   },
   {
     title: "Family Counseling",
@@ -31,6 +33,7 @@ const services = [
     tag: "Family Care",
     description:
       "Supporting families in restoring harmony, strengthening relationships and navigating life’s challenges together.",
+    consultationCta: true,
   },
   {
     title: "Leadership Training",
@@ -102,6 +105,23 @@ function ServicesSection() {
                 <span className="service-tag">{service.tag}</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+                {service.consultationCta && (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    href="#contact"
+                    className="service-card-action"
+                    sx={{
+                      alignSelf: "flex-start",
+                      mt: "auto",
+                      px: 2.5,
+                      py: 1.2,
+                      boxShadow: "0 10px 24px rgba(46, 49, 146, 0.18)",
+                    }}
+                  >
+                    Book Consultation
+                  </Button>
+                )}
               </div>
             </motion.div>
           ))}
