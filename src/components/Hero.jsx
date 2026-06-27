@@ -325,27 +325,6 @@ function Hero() {
               sx={{ width: '100%', maxWidth: { xs: 680, md: 560 } }}
             >
               <MotionTypography
-                variants={itemVariants}
-                sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  px: 1.5,
-                  py: 0.75,
-                  mb: 2,
-                  borderRadius: 999,
-                  border: '1px solid rgba(125, 211, 252, 0.24)',
-                  background: 'rgba(255, 255, 255, 0.06)',
-                  color: '#BAE6FD',
-                  fontSize: '0.78rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Meet Dr. Senhle
-              </MotionTypography>
-
-              <MotionTypography
                 variant="h1"
                 variants={itemVariants}
                 sx={{
