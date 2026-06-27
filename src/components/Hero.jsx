@@ -227,7 +227,7 @@ function HeroVisual({ activeImageIndex, mobile = false }) {
             left: { xs: 16, sm: 24 },
             right: { xs: 16, sm: 'auto' },
             bottom: { xs: 16, sm: 24 },
-            maxWidth: 260,
+            maxWidth: 290,
             px: 2,
             py: 1.4,
             borderRadius: '18px',
@@ -240,20 +240,16 @@ function HeroVisual({ activeImageIndex, mobile = false }) {
             sx={{
               color: '#FFFFFF',
               fontWeight: 700,
-              fontSize: { xs: '0.92rem', sm: '1rem' },
-              mb: 0.25,
+              fontSize: { xs: '1rem', sm: '1.08rem' },
+              lineHeight: 1.3,
+              mb: 0.4,
             }}
           >
-            28+ Years of Service
-          </Typography>
-          <Typography
-            sx={{
-              color: 'rgba(255, 255, 255, 0.78)',
-              fontSize: { xs: '0.82rem', sm: '0.9rem' },
-              lineHeight: 1.55,
-            }}
-          >
-            Mentoring leaders, strengthening families and guiding people with faith.
+            Transforming Lives Through
+            <br />
+            Faith, Leadership
+            <br />
+            &amp; Mentorship
           </Typography>
         </Box>
       </Box>
