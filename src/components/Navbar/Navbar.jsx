@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import {
   AppBar,
   Box,
-  Button,
   Container,
   Drawer,
   IconButton,
@@ -123,29 +122,6 @@ function Navbar() {
 
             {navLinks}
 
-            <Button
-              variant="contained"
-              color="primary"
-              href="#contact"
-              sx={{
-                display: 'inline-flex',
-                ml: { md: 3 },
-                mr: { xs: 1, md: 0 },
-                px: { xs: 2, sm: 2.5, md: 3 },
-                py: { xs: 1, md: 1.25 },
-                fontSize: { xs: '0.78rem', sm: '0.84rem', md: '0.9rem' },
-                minWidth: { xs: 0, sm: 'auto' },
-                boxShadow: '0 8px 24px rgba(46, 49, 146, 0.25)',
-              }}
-            >
-              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
-                Book Consultation
-              </Box>
-              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
-                Contact
-              </Box>
-            </Button>
-
             <IconButton
               edge="end"
               onClick={() => setDrawerOpen(true)}
@@ -190,17 +166,6 @@ function Navbar() {
               </ListItemButton>
             </ListItem>
           ))}
-          <ListItem sx={{ px: 2, pt: 2 }}>
-            <Button
-              variant="contained"
-              color="primary"
-              fullWidth
-              href="#contact"
-              onClick={() => setDrawerOpen(false)}
-            >
-              Book Consultation
-            </Button>
-          </ListItem>
         </List>
       </Drawer>
     </>
